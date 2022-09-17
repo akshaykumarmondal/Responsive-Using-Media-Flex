@@ -1,0 +1,92 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    font-size: 1.125rem;
+    color: #0a0808c2;
+    margin: 0;
+    background-color: rgb(231, 118, 137);
+}
+
+/* from a minimum width of 500px and above will be purple */
+@media (min-width: 500px) /*and (orientation: landscape)*/ {
+    body{
+        background-color: orange;
+    }
+}
+
+/* from a minimum width of 400px upto width of 649px above will be orange */
+/* setting the range */
+@media (min-width: 400px) and (max-width:649px){
+    body{
+        background-color: rgb(243, 206, 243);
+    }
+}
+
+
+h1{
+    font-size: 3rem;
+    color: #212614;
+    text-align: center;
+}
+h2{
+    font-size: 1.5rem;
+}
+p{
+    margin-top: 0 0;
+    width: 100%;
+}
+h1 span{
+    color: rgb(3, 57, 74);
+}
+img{
+    width: 100%;
+    height: 300px;
+}
+.container{
+    width: 95%;
+    max-width: 1200px;
+}
+.columns{
+    /* border: 2px solid rgb(3, 6, 63); */
+    display: flex;
+    margin: 1em 0;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+/* Anything below 600px will have column flex */
+@media (max-width:600px){
+    .columns{
+        flex-direction: column;
+    }
+}
+
+/* .cols{
+    border: 1px solid black;
+} */
+
+.cols-bg{
+    background-color: #212614;
+    padding: 1em;
+    color: #fff;
+    margin-right: 0;
+}
+.col-1{
+    width: 20%;
+}
+.col-2{
+    width: 45%;
+}
+.col-3{
+    width: 70%;
+}
+
+/* As below 600px all the flex items will be converted into columns which causes lot of extra space , in order to cure them we are setting width of 100% of it's parent container that is .columns for each flex items as we are resucing the size of the screen */
+
+@media (max-width:600px){
+    .col-1,
+    .col-2,
+    .col-3{
+        width:100%;
+    }
+}
